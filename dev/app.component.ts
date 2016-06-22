@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+
+// Should use './'
 import {MyComponentComponent} from './my-component.component'
 
 @Component({
