@@ -1,7 +1,7 @@
 /**
  * Created by yjw9012 on 6/21/16.
  */
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TestComponent} from './test.component';
 
 @Component({
@@ -28,6 +28,10 @@ import {TestComponent} from './test.component';
     styleUrls: ['src/css/mycomponent.css']
 })
 
-export class MyComponentComponent {
-    name = 'Jiwoong';
+export class MyComponentComponent implements OnInit {
+    name: string;
+
+    ngOnInit() : any {
+        this.name = "Jiwoong";
+    }
 }
