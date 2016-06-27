@@ -1,13 +1,16 @@
 import {Component} from '@angular/core';
-import {PuzzleComponent} from './puzzle/puzzle.component';
+import {PropertyBindingComponent} from './property-binding.component';
 
 @Component({
     selector: 'my-app',
     template: `
-        <my-puzzle></my-puzzle>
+        <h2>This is the parent component.</h2>
+        <h4>Enter your name: </h4>
+        <input type="text" [(ngModel)]="name">
+        <my-property [myName]="name" [myAge]="30"></my-property>
     `,
-    directives: [PuzzleComponent]
+    directives: [PropertyBindingComponent]
 })
 export class AppComponent {
-
+    name : string = "";
 }
