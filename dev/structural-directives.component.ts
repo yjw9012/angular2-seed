@@ -26,6 +26,27 @@ import {Component} from "@angular/core";
                 </ul>
             </div>
         </section>
+        <section class="directive">
+            <h2>[ngSwitch]</h2>
+            <div>
+                Enter red, blue, or green.
+                <input type="text" #color (keyup)="0">
+            </div>
+            <div [ngSwitch]="color.value">
+                <template [ngSwitchWhen]="'red'">
+                    <span style="color: red;">Color is Red.</span>
+                </template>
+                <template [ngSwitchWhen]="'blue'">
+                    <span style="color: blue;">Color is blue.</span>
+                </template>
+                <template [ngSwitchWhen]="'green'">
+                    <span style="color: green;">Color is green.</span>
+                </template>
+                <template ngSwitchDefault>
+                    <span>NO color</span>
+                </template>
+            </div>
+        </section>
     `
 })
 
