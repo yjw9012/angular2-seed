@@ -2,6 +2,7 @@
  * Created by yjw9012 on 7/4/16.
  */
 import {Component} from "@angular/core";
+import {UnlessDirective} from "./unless.directive";
 
 @Component({
     selector: "my-structural-directives",
@@ -47,7 +48,18 @@ import {Component} from "@angular/core";
                 </template>
             </div>
         </section>
-    `
+        <section class="directive">
+            <h2>Custom Directive: *myUnless</h2>
+            <div>
+                Enter true or false.
+                <input type="text" #condition (keyup)="0">
+            </div>
+            <div *myUnless="condition.value != 'false'">
+                Only shown if 'false' was entered!
+            </div>
+        </section>
+    `,
+    directives : [UnlessDirective]
 })
 
 export class StructuralDirectivesComponent {
